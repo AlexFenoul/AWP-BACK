@@ -2,6 +2,8 @@
 
 <a href="https://travis-ci.org/sundowndev/api-js-mooc"><img src="https://api.travis-ci.org/sundowndev/api-js-mooc.svg?branch=master" alt="Build status"></a>
 
+Documentation: https://sundowndev.github.io/express-api-example/
+
 RESTful API based on Expressjs.
 
 WARNING: This is for demo purposes. You should not run this in production (no cors, unit tests ...).
