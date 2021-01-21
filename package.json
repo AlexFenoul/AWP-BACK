@@ -19,14 +19,15 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "nodemon": "^2.0.2"
   },
   "apidoc": {
     "title": "Mooc API"
   },
   "scripts": {
     "docs": "apidoc -i ./app/routes -o ./docs",
-    "test": "eslint ./ && npm run docs"
+    "dev": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",
