@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
         message: 'Authentication failed. User not found.',
       });
     }
-
+    console.log(req.body.password === user.password)
     // check if password matches
     return bcrypt.compare(req.body.password, user.password, (error, result) => {
       if (result && !error) {
@@ -45,7 +45,7 @@ module.exports = (req, res, next) => {
           },
         });
       }
-
+      console.log(error)
       return next({
         status: 401,
         message: 'Authentication failed. Wrong password.',

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt-nodejs');
 
 const UserSchema = require.main.require('./app/models/user');
 const ImageSchema = require.main.require('./app/models/image');
@@ -14,9 +15,11 @@ mongoose.connection.on('connected', () => {
   mongoose.model('Image', ImageSchema);
 });
 
+const passwordHash = bcrypt.hashSync('test123');
+
 var userTest = new User( { 
   pseudo: 'test',
-  password: 'test123'
+  password: passwordHash
 })
 
 User.countDocuments({ pseudo: userTest.pseudo }, (err, count) => {
