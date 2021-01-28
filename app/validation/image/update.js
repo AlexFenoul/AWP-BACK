@@ -2,15 +2,15 @@ const Joi = require('joi');
 
 module.exports = (req, res, next) => {
   const schema = Joi.object().keys({
-    pseudo: Joi.string().min(2),
-    password: Joi.string(),
-    favorite: Joi.array(),
-  }) 
+    name: Joi.string().min(2).required(),
+    description: Joi.string().min(2).required(),
+    url: Joi.string().min(2).required()
+  });
 
   Joi.validate({
-    pseudo: req.body.firstname,
-    password: req.body.password,
-    favorite: req.body.favorite,
+    name: req.body.name,
+    description: req.body.description,
+    url: req.body.url,
   },
   schema, (validateErr) => {
     if (validateErr) {

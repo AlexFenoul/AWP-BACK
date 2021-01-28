@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 // Require routes
 const auth = require('./auth');
 const user = require('./user');
-const note = require('./note');
+const image = require('./image');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -18,11 +18,11 @@ routes.use((req, res, next) => {
 });
 
 routes.get('/', (req, res) => {
-  res.status(200).json({ success: true, message: 'Hello world!' });
+  res.status(200).json({ success: true, message: 'AWP-API' });
 });
 
 routes.use('/auth', auth);
 routes.use('/user', user);
-routes.use('/note', note);
+routes.use('/image', image);
 
 module.exports = routes;

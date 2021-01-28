@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
   const User = mongoose.model('User');
 
   User.findOne({
-    email: req.body.email,
+    pseudo: req.body.pseudo,
   }, (err, user) => {
     if (err) throw err;
 
@@ -25,7 +25,7 @@ module.exports = (req, res, next) => {
         // if user is found and password is right create a token
         const dataUser = {
           id: user.id,
-          email: user.email,
+          pseudo: user.pseudo,
         };
 
         const token = jwt.sign({
@@ -40,9 +40,8 @@ module.exports = (req, res, next) => {
           access_token: token,
           user: {
             _id: user.id,
-            firstname: user.firstname,
-            lastname: user.lastname,
-            email: user.email,
+            pseudo: user.pseudo,
+            favorite: user.favorite,
           },
         });
       }

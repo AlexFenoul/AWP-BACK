@@ -2,24 +2,24 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 
 module.exports = (req, res, next) => {
-  const UserModel = mongoose.model('User');
+  const ImageModel = mongoose.model('Image');
 
-  const passwordHash = bcrypt.hashSync(req.body.password);
 
-  const User = new UserModel({
-    pseudo: req.body.pseudo,
-    password: passwordHash,
+  const Image = new ImageModel({
+    name: req.body.name,
+    description: req.body.description,
+    url: req.body.url
   });
 
-  UserModel.countDocuments({ pseudo: req.body.pseudo }, (err, count) => {
+  ImageModel.countDocuments({ name: req.body.name }, (err, count) => {
     if (count !== 0) {
       return next({
         status: 401,
-        message: 'Pseudo is already taken by another user.',
+        message: 'Name is already taken by another image.',
       });
     }
 
-    return User.save((saveErr) => {
+    return Image.save((saveErr) => {
       if (saveErr) {
         return next({
           status: 500,
