@@ -1,16 +1,19 @@
 # AWP-API 
 
+## Prérequis
+`- Docker`
+
 ## Install project 
 `Docker-compose up`
 
 ## Tout les Endpoint sont sécurisé via une authentification JWT (Sauf auth/login)
 
 ### Authentification
-`Headers : {`
-    `Authorization : JWTToken`
-`}`
+Headers : {
+    Authorization : JWTToken
+}
 
-`Le token dure 3 heures`
+`3 heures de vie`
 
 ## API Endpoint
 
@@ -64,6 +67,7 @@
 
 #### Response
 > Status : 200 OK
+
     {
         "success": true,
         "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjAxMjdiNTg3NjhkZjAwMDQ4NGQ2NWUzIiwicHNldWRvIjoiSGFkZXMifSwiaWF0IjoxNjExODMyMzA3LCJleHAiOjE2MTE4NDMxMDd9.9ZkVBBn6CtOz6swd_tPRyDKM9KVHpCy4w419ZVcBu9w",
