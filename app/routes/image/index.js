@@ -10,6 +10,6 @@ const CreateValidation = require.main.require('./app/validation/image/create');
 
 image.get('/', images);
 image.get('/:id', Authentication, single);
-image.post('/', CreateValidation, create);
+image.post('/', Authentication, CreateValidation, create);
 
 module.exports = image;

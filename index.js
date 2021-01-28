@@ -7,7 +7,6 @@ const app = express();
 const routes = require('./app/routes');
 
 const port = process.env.PORT || 8080; // set our port
-
 app.use(cors());
 
 app.use((err, req, res, next) => {
