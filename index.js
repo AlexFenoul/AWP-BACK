@@ -12,13 +12,16 @@ app.use('/', routes);
 app.use(cors());
 
 app.use((err, req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.status(err.status || 400).json({
     success: false,
     message: err.message || 'An error occured.',
     errors: err.error || [],
   });
+});
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");  
   next()
 });
 
