@@ -3,7 +3,7 @@ const user = require('express').Router();
 const profile = require('./profile');
 const update = require('./update');
 const remove = require('./delete');
-const notes = require('./notes');
+const favorites = require('./favorites');
 
 const Authentication = require.main.require('./app/validation/auth/auth');
 const UpdateValidation = require.main.require('./app/validation/user/update');
@@ -19,7 +19,7 @@ const DeleteValidation = require.main.require('./app/validation/user/delete');
  * @apiSuccess {String} lastname  Lastname of the User.
  * @apiSuccess {String} email  Email of the User.
  */
-user.get('/me', Authentication, profile);
+user.get('/', Authentication, profile);
 
 /**
   * @api {put} /user/me Update account information
@@ -38,7 +38,7 @@ user.get('/me', Authentication, profile);
   * @apiSuccess {String} lastname  Lastname of the User.
   * @apiSuccess {String} email  Email of the User.
   */
-user.put('/me', Authentication, UpdateValidation, update);
+user.put('/', Authentication, UpdateValidation, update);
 
 /**
  * @api {delete} /user/me Delete account
@@ -47,7 +47,7 @@ user.put('/me', Authentication, UpdateValidation, update);
  *
  * @apiParam {String} password Account password.
  */
-user.delete('/me', Authentication, DeleteValidation, remove);
+user.delete('/', Authentication, DeleteValidation, remove);
 
 /**
   * @api {get} /user/me/notes Get all notes
@@ -56,6 +56,6 @@ user.delete('/me', Authentication, DeleteValidation, remove);
   *
   * @apiSuccess {Array} Array Notes of the user.
   */
-user.get('/me/notes', Authentication, notes);
+user.get('/favorites', Authentication, favorites);
 
 module.exports = user;

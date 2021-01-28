@@ -41,6 +41,6 @@ auth.post('/login', LoginValidation, login);
  * @apiParam {String} email email of the user.
  * @apiParam {String} password password of the user.
  */
-auth.post('/rester-password', reset);
+auth.post('/reset-password', reset);
 
 module.exports = auth;

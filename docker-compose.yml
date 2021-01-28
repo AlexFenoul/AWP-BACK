@@ -17,7 +17,7 @@ services:
   mongo:
     image: mongo
     environment:
-      MONGO_INITDB_DATABASE: mooc-api
+      MONGO_INITDB_DATABASE: awp-api
     expose:
       - 27017
     ports:

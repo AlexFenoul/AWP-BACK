@@ -1,9 +1,4 @@
 # API node
-
-<a href="https://travis-ci.org/sundowndev/api-js-mooc"><img src="https://api.travis-ci.org/sundowndev/api-js-mooc.svg?branch=master" alt="Build status"></a>
-
-Documentation: https://sundowndev.github.io/express-api-example/
-
 RESTful API based on Expressjs.
 
 WARNING: This is for demo purposes. You should not run this in production (no cors, unit tests ...).
@@ -11,8 +6,9 @@ WARNING: This is for demo purposes. You should not run this in production (no co
 ## Features
 
 - Sign up/sign in (JWT, bcrypt)
-- Create, update, delete, read your notes
+- Read your images
 - Manage your account: update, delete
+- Add favorite images
 
 ## Call the API
 

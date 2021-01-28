@@ -2,12 +2,12 @@ const Joi = require('joi');
 
 module.exports = (req, res, next) => {
   const schema = Joi.object().keys({
-    email: Joi.string().email({ minDomainAtoms: 2 }).required(),
+    pseudo: Joi.string().min(2).required(),
     password: Joi.string().required(),
   });
 
   Joi.validate({
-    email: req.body.email,
+    pseudo: req.body.pseudo,
     password: req.body.password,
   },
   schema, (validateErr) => {
