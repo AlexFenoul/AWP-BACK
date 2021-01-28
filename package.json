@@ -11,10 +11,10 @@
     "joi": "^14.0.6",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.11",
-    "passport": "^0.4.0"
+    "passport": "^0.4.0",
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
-    "apidoc": "^0.17.7",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",

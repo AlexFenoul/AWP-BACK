@@ -8,7 +8,6 @@ const routes = require('./app/routes');
 
 const port = process.env.PORT || 8080; // set our port
 
-app.use('/', routes);
 app.use(cors());
 
 app.use((err, req, res, next) => {
@@ -25,6 +24,7 @@ app.use(function(req, res, next) {
   next()
 });
 
+app.use('/', routes);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, message: 'Resource not found.' });
